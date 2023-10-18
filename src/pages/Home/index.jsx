@@ -1,9 +1,14 @@
-import Button from '@mui/material/Button'
+import { Typography } from '@mui/material';
+
+
 
 const Home = () => {
   return (
     <>
-      <Button variant='contained'>Hello world</Button>
+      <Typography variant="h3">
+        Welcome to Home page
+      </Typography>
+
     </>
   )
 }
