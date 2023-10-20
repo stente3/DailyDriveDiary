@@ -1,14 +1,13 @@
-import { Typography } from '@mui/material';
+import { AdvicesButton } from '../../components/AdvicesButton';
+import { Board } from '../../components/Board';
 
 
 
 const Home = () => {
   return (
     <>
-      <Typography variant="h3">
-        Welcome to Home page
-      </Typography>
-
+      <AdvicesButton/>
+      <Board/>
     </>
   )
 }
