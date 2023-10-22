@@ -1,7 +1,7 @@
 const ClearCompleted = () => (
-    <div>
-      <button>Clear Completed</button>
-    </div>
-  );
-  
-  export {ClearCompleted};
+	<div>
+		<button>Clear Completed</button>
+	</div>
+);
+
+export { ClearCompleted };
