@@ -1,30 +1,18 @@
-import React, {useState} from "react";
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { useAuth } from '../../context/DataContext.jsx';
 
 const Login = () => {
-	const [userName, setUserName] = useState("");
-	const [password, setPassword] = useState("");
+	const { loginUser } = useAuth();
+	const [userName, setUserName] = useState('');
+	const [password, setPassword] = useState('');
+
+	let navigate = useNavigate();
 
 	const handleSubmit = async e => {
 		e.preventDefault();
-
-		// Realiza la validación cargando el archivo JSON
-		try {
-			const response = await fetch("/data.json");
-			const data = await response.json();
-
-			const usuarioValido = data.find(
-				usuario =>
-					usuario.name === userName && usuario.password === password
-			);
-
-			if (usuarioValido) {
-				alert("Inicio de sesión exitoso");
-				// Realiza acciones adicionales, como redirigir al usuario.
-			} else {
-				alert("Credenciales incorrectas");
-			}
-		} catch (error) {
-			console.error("Error al cargar el archivo JSON:", error);
+		if (loginUser(userName, password)) {
+			navigate('/home');
 		}
 	};
 
@@ -47,4 +35,4 @@ const Login = () => {
 	);
 };
 
-export {Login};
+export { Login };
