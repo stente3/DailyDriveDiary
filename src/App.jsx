@@ -1,22 +1,33 @@
-import React from "react";
-import {BrowserRouter, Route, Routes} from "react-router-dom";
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { AuthProvider } from './context/DataContext';
 
-import {Advices} from "./pages/Advices";
-import {Login} from "./pages/Login";
-import {Home} from "./pages/Home";
+import { Advices } from './pages/Advices';
+import { Login } from './pages/Login';
+import { Home } from './pages/Home';
+import { ProtectedRoute } from './utils/ProtectedRoutes';
 
 const App = () => {
 	return (
 		<>
 			<BrowserRouter>
-				<Routes>
-					<Route path='/login' element={<Login />} />
-					<Route path='/' element={<Home />} />
-					<Route path='/advices' element={<Advices />} />
-				</Routes>
+				<AuthProvider>
+					<Routes>
+						<Route index element={<Login />} />
+						<Route path='/login' element={<Login />} />
+						<Route
+							path='/home'
+							element={
+								<ProtectedRoute>
+									<Home />
+								</ProtectedRoute>
+							}
+						/>
+						<Route path='/advices' element={<Advices />} />
+					</Routes>
+				</AuthProvider>
 			</BrowserRouter>
 		</>
 	);
 };
 
-export {App};
+export { App };
