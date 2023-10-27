@@ -1,6 +1,8 @@
+import styles from './clearcompleted.module.css';
+
 const ClearCompleted = () => (
 	<div>
-		<button>Clear Completed</button>
+		<button className={styles.clearButton}>Clear Completed</button>
 	</div>
 );
 

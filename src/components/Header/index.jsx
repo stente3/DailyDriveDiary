@@ -1,4 +1,4 @@
-import iconUrl from '../../assets/images/brightMode.png';
+import iconUrl from '../../assets/images/icon-sun.svg';
 import styles from './header.module.css';
 
 const Header = () => (
@@ -10,7 +10,7 @@ const Header = () => (
 		</div>
 		{/* form para el input del todo-list */}
 		<form className={styles.newTaskForm}>
-			<button>
+			<button className={styles.checkContainer}>
 				<div />
 			</button>
 			<input placeholder='Create a new todo...' type='text' />

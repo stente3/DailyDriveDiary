@@ -41,3 +41,10 @@ p.textCompleted {
 	height: 100%;
 	color: #5e60ce;
 }
+
+.deleteButton {
+	background: none;
+	border: none;
+	color: #808080;
+  }
+

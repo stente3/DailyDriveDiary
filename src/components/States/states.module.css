@@ -1,0 +1,8 @@
+.statesButtons {
+	border: none; 
+	background: none;
+	padding: 5px; 
+	font-size: inherit; 
+	color: inherit; 
+	cursor: pointer;
+}
