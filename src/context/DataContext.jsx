@@ -13,7 +13,7 @@ export const AuthProvider = ({ children }) => {
 	const [currentUser, setCurrentUser] = useState(null);
 
 	useEffect(() => {
-		// Simula una solicitud de lectura del archivo data.json.
+		// Hace una solicitud de lectura del archivo data.json.
 		fetch('/data.json')
 			.then(response => response.json())
 			.then(data => {
@@ -31,6 +31,7 @@ export const AuthProvider = ({ children }) => {
 		);
 		if (user) {
 			setCurrentUser(user);
+			localStorage.setItem('activeLogin', true);
 			return true;
 		}
 		return false;
