@@ -2,12 +2,12 @@
 @font-face {
 	font-family: 'Josefin';
 	font-weight: 400;
-	src: url('../assets/fonts/Josefin_Sans/JosefinSans-Italic-VariableFont_wght.ttf');
+	src: url('../assets/fonts/Josefin_Sans/JosefinSans-Regular.ttf');
 }
 @font-face {
 	font-family: 'Josefin';
 	font-weight: 700;
-	src: url('../assets/fonts/Josefin_Sans/JosefinSans-VariableFont_wght.ttf');
+	src: url('../assets/fonts/Josefin_Sans/JosefinSans-Bold.ttf');
 }
 
 * {
@@ -20,7 +20,6 @@ body {
 	background: #191919;
 	color: white;
 	font-family: 'Josefin';
-	font-weight: 700;
 }
 
 button {

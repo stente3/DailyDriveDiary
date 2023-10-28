@@ -1,8 +1,12 @@
 .footer {
+	font-family: 'Josefin';
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	padding: 10px 0;
 	max-width: 700px;
 	margin: 0 auto;
+	border: 1px solid #333333;
+	background: #262626;
+	border-radius: 5px;
+	padding: 16px;
 }

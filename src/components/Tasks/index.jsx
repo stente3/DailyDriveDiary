@@ -1,12 +1,14 @@
 import { Item } from '../Item';
+import { NewTask } from '../NewTask';
 import styles from './tasks.module.css';
 
 const Tasks = () => (
-	<section className={styles.tasks}>
+	<div className={styles.tasks}>
+		<NewTask />
 		<div className={styles.list}>
 			<Item />
 		</div>
-	</section>
+	</div>
 );
 
 export { Tasks };
