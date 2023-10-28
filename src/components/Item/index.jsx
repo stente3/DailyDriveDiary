@@ -1,7 +1,7 @@
 import styles from './item.module.css';
 import iconDelete from '../../assets/images/icon-cross.svg';
 
-const Item = () => (
+export const Item = () => (
 	<div className={styles.task}>
 		<button className={styles.checkContainer}>
 			<div />
@@ -16,5 +16,3 @@ const Item = () => (
 		</button>
 	</div>
 );
-
-export { Item };

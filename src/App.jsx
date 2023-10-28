@@ -6,7 +6,7 @@ import { Login } from './pages/Login';
 import { Home } from './pages/Home';
 import { ProtectedRoute } from './utils/ProtectedRoutes';
 
-const App = () => {
+export const App = () => {
 	return (
 		<>
 			<BrowserRouter>
@@ -29,5 +29,3 @@ const App = () => {
 		</>
 	);
 };
-
-export { App };

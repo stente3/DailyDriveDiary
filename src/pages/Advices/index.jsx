@@ -1,9 +1,7 @@
-const Advices = () => {
+export const Advices = () => {
 	return (
 		<>
-			<h1>Welcome to Advices page</h1>
+			<h1 className='text-3xl font-bold underline'>Welcome to Advices page</h1>
 		</>
 	);
 };
-
-export { Advices };

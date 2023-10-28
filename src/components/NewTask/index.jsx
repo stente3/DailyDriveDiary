@@ -1,6 +1,6 @@
 import styles from './newTask.module.css';
 
-const NewTask = () => (
+export const NewTask = () => (
 	<form className={styles.newTaskForm}>
 		{/* form para el input del todo-list */}
 		<button className={styles.checkContainer}>
@@ -9,5 +9,3 @@ const NewTask = () => (
 		<input placeholder='Create a new todo...' type='text' />
 	</form>
 );
-
-export { NewTask };

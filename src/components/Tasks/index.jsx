@@ -2,7 +2,7 @@ import { Item } from '../Item';
 import { NewTask } from '../NewTask';
 import styles from './tasks.module.css';
 
-const Tasks = () => (
+export const Tasks = () => (
 	<div className={styles.tasks}>
 		<NewTask />
 		<div className={styles.list}>
@@ -10,5 +10,3 @@ const Tasks = () => (
 		</div>
 	</div>
 );
-
-export { Tasks };

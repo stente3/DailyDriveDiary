@@ -1,7 +1,7 @@
 import { AdvicesButton } from '../../components/AdvicesButton';
 import { Board } from '../../components/Board';
 
-const Home = () => {
+export const Home = () => {
 	return (
 		<>
 			<AdvicesButton />
@@ -9,5 +9,3 @@ const Home = () => {
 		</>
 	);
 };
-
-export { Home };

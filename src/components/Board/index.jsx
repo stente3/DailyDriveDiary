@@ -3,7 +3,7 @@ import { Tasks } from '../Tasks';
 import { Footer } from '../Footer';
 import { Header } from '../Header';
 
-function Board() {
+export const Board = () => {
 	return (
 		<div className={styles.board}>
 			<Header />
@@ -11,6 +11,4 @@ function Board() {
 			<Footer />
 		</div>
 	);
-}
-
-export { Board };
+};

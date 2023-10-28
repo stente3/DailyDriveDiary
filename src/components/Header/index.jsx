@@ -1,7 +1,7 @@
 import iconUrl from '../../assets/images/icon-sun.svg';
 import styles from './header.module.css';
 
-const Header = () => (
+export const Header = () => (
 	<header className={styles.header}>
 		{/* div para el título e icono */}
 		<div className={styles.title}>
@@ -10,5 +10,3 @@ const Header = () => (
 		</div>
 	</header>
 );
-
-export { Header };
