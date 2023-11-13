@@ -3,9 +3,8 @@ import iconDelete from '../../assets/images/icon-cross.svg';
 
 export const Item = () => (
 	<div className={styles.task}>
-		<button className={styles.checkContainer}>
-			<div />
-		</button>
+		<button className={styles.checkContainer}></button>
+
 		<p>
 			Integer urna interdum massa libero auctor neque turpis turpis semper. Duis
 			vel sed fames integer.
