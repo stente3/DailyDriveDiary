@@ -1,4 +1,4 @@
-// import { Advice } from '../../components/Advice';
+import { Advice } from '../../components/Advice';
 import image1 from '../../assets/images/advices1.png';
 import image2 from '../../assets/images/advices2.png';
 import image3 from '../../assets/images/advices3.png';
@@ -38,12 +38,7 @@ export const Advices = () => {
 		<>
 			<h1>Transform your Lists into Efficiency</h1>
 			{data.map(e => {
-				return (
-					<>
-						<img src={e.img} />
-						<p>{e.text}</p>
-					</>
-				);
+				return <Advice img={e.img} text={e.text} />;
 			})}
 		</>
 	);
