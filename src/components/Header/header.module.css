@@ -21,4 +21,5 @@
 .image {
 	width: auto;
 	height: 30px;
+	cursor: pointer;
 }

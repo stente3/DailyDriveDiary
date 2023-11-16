@@ -9,4 +9,6 @@
 	background: #262626;
 	border-radius: 5px;
 	padding: 16px;
+	border-top-left-radius: 0;
+    border-top-right-radius: 0;
 }
