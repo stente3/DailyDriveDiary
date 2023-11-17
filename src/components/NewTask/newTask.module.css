@@ -12,7 +12,8 @@
 	gap: 12px;
 	font-size: 18px;
 	z-index: 1;
-	margin-top: -60px;
+	margin-top: -70px;
+	margin-bottom: 30px;
 }
 
 .newTaskForm input {
