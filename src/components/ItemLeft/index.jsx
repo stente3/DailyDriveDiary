@@ -1,5 +1,7 @@
-export const ItemLeft = () => (
-	<div>
-		<p>5 items left</p>
-	</div>
-);
+export const ItemLeft = ({ todosLength }) => {
+	return (
+		<div>
+			<p>{todosLength} items left</p>
+		</div>
+	);
+};
