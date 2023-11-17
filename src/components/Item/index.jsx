@@ -1,7 +1,7 @@
 import styles from './item.module.css';
 import iconDelete from '../../assets/images/icon-cross.svg';
 import { useDispatch } from 'react-redux';
-import { removeTodo } from '../../reducers/todoReducer';
+import { removeTodo, toggleCompleted } from '../../reducers/todoReducer';
 
 const Item = ({ id, text }) => {
 	const dispatch = useDispatch();
@@ -9,10 +9,16 @@ const Item = ({ id, text }) => {
 	const handleRemoveTodo = () => {
 		dispatch(removeTodo(id));
 	};
+	const handleCompletedTodo = () => {
+		dispatch(toggleCompleted(id));
+	};
 
 	return (
 		<div className={styles.task}>
-			<button className={styles.checkContainer}></button>
+			<button
+				onClick={handleCompletedTodo}
+				className={styles.checkContainer}
+			></button>
 
 			<p>{text}</p>
 
