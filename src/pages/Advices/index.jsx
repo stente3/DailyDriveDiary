@@ -1,5 +1,6 @@
 import React from 'react';
-import Advice from '../../components/Advice/index';
+import styles from '../../components/Advice/advice.module.css';
+import iconUrl from '../../assets/images/icon-sun.svg';
 import image1 from '../../assets/images/advices1.png';
 import image2 from '../../assets/images/advices2.png';
 import image3 from '../../assets/images/advices3.png';
@@ -43,10 +44,24 @@ const data = [
 export const Advices = () => {
 	return (
 		<>
-			<h1>Transform your Lists into Efficiency</h1>
-			{data.map(e => {
-				return <Advice key={e.id} img={e.img} text={e.text} />;
-			})}
+			<img className={styles.image} src={iconUrl} alt='Icon' />
+			<h1 className={styles.title}>Transform your Lists into Efficiency</h1>
+			<div className={styles.adviceContainer}>
+				{data.map(e => {
+					return (
+						<div className={styles.advice} key={e.id}>
+							<div className={styles.adviceBox}>
+								<div className={styles.adviceImage}>
+									<img src={e.img} alt='Advice' />
+								</div>
+								<div className={styles.adviceText}>
+									<h2>{e.text}</h2>
+								</div>
+							</div>
+						</div>
+					);
+				})}
+			</div>
 		</>
 	);
 };
