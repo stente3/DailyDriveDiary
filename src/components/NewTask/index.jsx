@@ -25,6 +25,7 @@ export const NewTask = () => {
 				placeholder='Create a new todo...'
 				type='text'
 				value={text}
+				className={styles.form}
 				onChange={e => setText(e.target.value)}
 			/>
 		</form>
