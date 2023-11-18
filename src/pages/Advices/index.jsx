@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from '../../components/Advice/advice.module.css';
+import styles from './advices.module.css';
 import iconUrl from '../../assets/images/icon-sun.svg';
 import image1 from '../../assets/images/advices1.png';
 import image2 from '../../assets/images/advices2.png';
@@ -7,6 +7,7 @@ import image3 from '../../assets/images/advices3.png';
 import image4 from '../../assets/images/advices4.png';
 import image5 from '../../assets/images/advices5.png';
 import image6 from '../../assets/images/advices6.png';
+import { Advice } from '../../components/Advice';
 
 const data = [
 	{
@@ -47,19 +48,8 @@ export const Advices = () => {
 			<img className={styles.image} src={iconUrl} alt='Icon' />
 			<h1 className={styles.title}>Transform your Lists into Efficiency</h1>
 			<div className={styles.adviceContainer}>
-				{data.map(e => {
-					return (
-						<div className={styles.advice} key={e.id}>
-							<div className={styles.adviceBox}>
-								<div className={styles.adviceImage}>
-									<img src={e.img} alt='Advice' />
-								</div>
-								<div className={styles.adviceText}>
-									<h2>{e.text}</h2>
-								</div>
-							</div>
-						</div>
-					);
+				{data.map((e, key) => {
+					return <Advice key={key} e={e} />;
 				})}
 			</div>
 		</>
