@@ -5,6 +5,7 @@ import { addTodo } from '../../reducers/todoReducer';
 import { useSelector } from 'react-redux/es/hooks/useSelector';
 
 export const NewTask = () => {
+	const isDarkMode = useSelector(state => state.theme.isDarkMode);
 	const dispatch = useDispatch();
 	const [text, setText] = useState('');
 	const todos = useSelector(state => state.todos.list);
@@ -18,7 +19,10 @@ export const NewTask = () => {
 	};
 
 	return (
-		<form onSubmit={handleAddTodo} className={styles.newTaskForm}>
+		<form
+			onSubmit={handleAddTodo}
+			className={isDarkMode ? styles.newTaskForm : styles.newTaskFormLightMode}
+		>
 			{/* form para el input del todo-list */}
 			<button className={styles.checkContainer}></button>
 			<input

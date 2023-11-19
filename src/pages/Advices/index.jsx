@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from './advices.module.css';
-import iconUrl from '../../assets/images/icon-sun.svg';
+import sunIcon from '../../assets/images/icon-sun.svg';
+import moonIcon from '../../assets/images/icon-moon.svg';
 import image1 from '../../assets/images/advices1.png';
 import image2 from '../../assets/images/advices2.png';
 import image3 from '../../assets/images/advices3.png';
@@ -8,6 +9,8 @@ import image4 from '../../assets/images/advices4.png';
 import image5 from '../../assets/images/advices5.png';
 import image6 from '../../assets/images/advices6.png';
 import { Advice } from '../../components/Advice';
+import { useDispatch, useSelector } from 'react-redux';
+import { toggleTheme } from '../../reducers/themeReducer';
 
 const data = [
 	{
@@ -43,9 +46,21 @@ const data = [
 ];
 
 export const Advices = () => {
+	const isDarkMode = useSelector(state => state.theme.isDarkMode);
+	const dispatch = useDispatch();
+
+	const handleToggle = () => {
+		dispatch(toggleTheme());
+	};
+
 	return (
 		<>
-			<img className={styles.image} src={iconUrl} alt='Icon' />
+			<img
+				onClick={handleToggle}
+				className={isDarkMode ? styles.image : styles.imageLight}
+				src={isDarkMode ? sunIcon : moonIcon}
+				alt='Icon'
+			/>
 			<h1 className={styles.title}>Transform your Lists into Efficiency</h1>
 			<div className={styles.adviceContainer}>
 				{data.map((e, key) => {

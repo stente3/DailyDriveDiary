@@ -1,10 +1,11 @@
 import { useState } from 'react';
 import styles from './item.module.css';
 import iconDelete from '../../assets/images/icon-cross.svg';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { removeTodo, toggleCompleted } from '../../reducers/todoReducer';
 
 const Item = ({ id, text, onDragStart, onDrop, onDragOver }) => {
+	const isDarkMode = useSelector(state => state.theme.isDarkMode);
 	const dispatch = useDispatch();
 	const [completed, setCompleted] = useState(false);
 
@@ -19,7 +20,9 @@ const Item = ({ id, text, onDragStart, onDrop, onDragOver }) => {
 
 	return (
 		<div
-			className={`${styles.task} ${completed ? styles.completed : ''}`}
+			className={`${isDarkMode ? styles.task : styles.taskLightMode} ${
+				completed ? styles.completed : ''
+			}`}
 			draggable='true'
 			onDragStart={e => onDragStart(e, id)}
 			onDrop={onDrop}

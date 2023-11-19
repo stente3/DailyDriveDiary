@@ -15,12 +15,40 @@
 	margin-top: -70px;
 	margin-bottom: 30px;
 }
+.newTaskFormLightMode {
+	width: 100%;
+	background: white;
+	border: 1px solid hsl(0, 0%, 98%);
+	/* border: 1px solid #333333; */
+	padding: 16px;
+	border-radius: 5px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	bottom: 380px;
+	max-width: 700px;
+	gap: 12px;
+	font-size: 18px;
+	z-index: 1;
+	margin-top: -70px;
+	margin-bottom: 30px;
+}
 
 .newTaskForm input {
 	height: 100%;
 	flex: 1;
 	color: #fff;
 	background: #262626;
+	border: none;
+	outline: none;
+	padding: 0 16px;
+	font-size: 16px;
+}
+.newTaskFormLightMode input{
+	height: 100%;
+	flex: 1;
+	color: hsl(235, 19%, 35%);
+	background: white;
 	border: none;
 	outline: none;
 	padding: 0 16px;

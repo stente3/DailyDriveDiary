@@ -1,3 +1,4 @@
+import { useSelector } from 'react-redux';
 import { Item } from '../Item';
 import { NewTask } from '../NewTask';
 import styles from './tasks.module.css';

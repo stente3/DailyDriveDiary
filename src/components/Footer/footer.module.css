@@ -13,3 +13,19 @@
     border-top-right-radius: 0;
 	text-align: center;
 }
+
+.footerLightMode {
+	font-family: 'Josefin';
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	max-width: 700px;
+	margin: 0 auto;
+	border: 1px solid white;
+	background: white;
+	border-radius: 5px;
+	padding: 16px;
+	border-top-left-radius: 0;
+    border-top-right-radius: 0;
+	text-align: center;
+}
