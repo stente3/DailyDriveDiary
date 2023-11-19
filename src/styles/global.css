@@ -15,7 +15,7 @@
 	box-sizing: border-box;
 }
 
-body #root {
+body {
 	background: #191919;
 	color: white;
 	font-family: 'Josefin';

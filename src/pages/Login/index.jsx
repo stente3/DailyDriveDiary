@@ -16,6 +16,9 @@ const defaultTheme = createTheme();
 
 export function Login() {
 	let navigate = useNavigate();
+	const body = document.body;
+	body.style.backgroundColor = 'white';
+	body.style.color = 'black';
 
 	const { loginUser } = useAuth();
 	const [userName, setUserName] = useState('');
@@ -32,6 +35,8 @@ export function Login() {
 			setLoginError(false);
 			// Directiona al usuario a la página "home"
 			navigate('/home');
+			body.style.backgroundColor = '#191919';
+			body.style.color = 'white';
 		}
 	};
 
