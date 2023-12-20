@@ -3,6 +3,7 @@ import styles from './item.module.css';
 import iconDelete from '../../assets/images/icon-cross.svg';
 import { useDispatch, useSelector } from 'react-redux';
 import { removeTodo, toggleCompleted } from '../../reducers/todoReducer';
+import iconCheck from '../../assets/images/icon-check.svg';
 
 const Item = ({ todo, onDragStart, onDrop, onDragOver }) => {
 	const isDarkMode = useSelector(state => state.theme.isDarkMode);
@@ -37,7 +38,9 @@ const Item = ({ todo, onDragStart, onDrop, onDragOver }) => {
 				className={`${styles.checkContainer} ${
 					completed ? styles.checked : ''
 				}`}
-			></button>
+			>
+				{completed && <img src={iconCheck} alt='Check icon' />}
+			</button>
 
 			<p className={completed ? styles.textCompleted : ''}>{todo.text}</p>
 

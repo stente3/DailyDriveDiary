@@ -69,24 +69,17 @@ p.textCompleted {
 	color: #808080;
 }
   
-  .checkContainer.checked {
+.checkContainer.checked {
 	background: #5e60ce; 
 	border: 2px solid #5e60ce;
 	display: flex;
 	justify-content: center; 
 	align-items: center;
-  }
-
-  .checkContainer.checked::before {
-	content: url('../../assets/images/icon-check.svg');
-	display: block;
-	color: #5e60ce;
-	width: 10px;
-  }
+}
   
-  .task p.textCompleted {
+.task p.textCompleted {
 	color: #808080;
 	text-decoration: line-through;
-  }
+}
   
 
