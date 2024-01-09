@@ -1,7 +1,6 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { AuthProvider } from './context/DataContext';
 
-import { Advices } from './pages/Advices';
 import { Login } from './pages/Login';
 import { Home } from './pages/Home';
 import { ProtectedRoute } from './utils/ProtectedRoutes';
@@ -24,7 +23,6 @@ export const App = () => {
 								</ProtectedRoute>
 							}
 						/>
-						<Route path='/advices' element={<Advices />} />
 					</Routes>
 				</AuthProvider>
 			</BrowserRouter>
