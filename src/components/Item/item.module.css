@@ -3,28 +3,43 @@
 	background: #262626;
 	border: 1px solid #333333;
 	padding: 16px;
-	border-radius: 5px;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
 	gap: 12px;
-	border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
 	margin-top: -13px;
 }
+
+.task:first-child {
+	border-radius: 5px 5px 0 0;
+}
+.task:last-child {
+	border-radius: 0 0 5px 5px;
+}
+.task:only-child {
+	border-radius: 5px 5px 5px 5px;
+}
+
 .taskLightMode {
 	width: 100%;
 	background: white;
 	border: 1px solid #333333;
 	padding: 16px;
-	border-radius: 5px;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
 	gap: 12px;
-	border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
 	margin-top: -13px;
+}
+
+.taskLightMode:first-child {
+	border-radius: 5px 5px 0 0;
+}
+.taskLightMode:last-child {
+	border-radius: 0 0 5px 5px;
+}
+.taskLightMode:only-child {
+	border-radius: 5px 5px 5px 5px;
 }
 
 .task p {
@@ -33,15 +48,15 @@
 	color: #f2f2f2;
 	margin-right: auto;
 	overflow: auto;
-    word-wrap: break-word;
+	word-wrap: break-word;
 }
-.taskLightMode p{
+.taskLightMode p {
 	font-size: 14px;
 	line-height: 19px;
-	color: hsl(235, 19%, 35%)15px;
+	color: hsl(235, 19%, 35%) 15px;
 	margin-right: auto;
 	overflow: auto;
-    word-wrap: break-word;
+	word-wrap: break-word;
 }
 
 p.textCompleted {
@@ -68,18 +83,16 @@ p.textCompleted {
 	border: none;
 	color: #808080;
 }
-  
+
 .checkContainer.checked {
-	background: #5e60ce; 
+	background: #5e60ce;
 	border: 2px solid #5e60ce;
 	display: flex;
-	justify-content: center; 
+	justify-content: center;
 	align-items: center;
 }
-  
+
 .task p.textCompleted {
 	color: #808080;
 	text-decoration: line-through;
 }
-  
-
