@@ -25,13 +25,3 @@
 	height: 30px;
 	cursor: pointer;
 }
-
-.headerLightMode {
-	color: white;
-	background-image: url('../../assets/images/bg-desktop-dark.jpg');
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	height: 200px;
-	position: relative;
-}

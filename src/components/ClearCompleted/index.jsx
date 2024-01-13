@@ -10,6 +10,7 @@ export const ClearCompleted = () => {
 	return (
 		<div>
 			<button
+				type='button'
 				onClick={handleRemoveCompletedTodos}
 				className={styles.clearButton}
 			>
