@@ -2,12 +2,10 @@ import styles from './board.module.css';
 import { Tasks } from '../Tasks';
 import { Footer } from '../Footer';
 import { Header } from '../Header';
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { useState, useEffect } from 'react';
-import { updateTodosOrder } from '../../reducers/todoReducer'; // Asegúrate de importar la acción updateTodosOrder
 
 export const Board = () => {
-	const dispatch = useDispatch();
 	const todos = useSelector(state => state.todos.list);
 	const [filter, setFilter] = useState('all');
 	const [itemLeft, setItemLeft] = useState(todos.length);
@@ -28,27 +26,6 @@ export const Board = () => {
 
 	const filteredTodos = filterList();
 
-	const handleDragStart = (e, id) => {
-		e.dataTransfer.setData('text/plain', id.toString());
-	};
-
-	const handleDrop = (e, droppedIndex) => {
-		e.preventDefault();
-		const droppedTaskId = e.dataTransfer.getData('text/plain');
-		const draggedIndex = todos.findIndex(
-			todo => todo.id.toString() === droppedTaskId,
-		);
-
-		if (draggedIndex === droppedIndex) {
-			return; // Si se soltó en la misma posición, no se hace nada
-		}
-
-		const updatedTodos = Array.from(todos);
-		const [draggedItem] = updatedTodos.splice(draggedIndex, 1);
-		updatedTodos.splice(droppedIndex, 0, draggedItem);
-
-		dispatch(updateTodosOrder(updatedTodos));
-	};
 	useEffect(() => {
 		setItemLeft(filteredTodos.length);
 	}, [filteredTodos]);
@@ -56,12 +33,7 @@ export const Board = () => {
 	return (
 		<div className={styles.board}>
 			<Header />
-			<Tasks
-				todos={filteredTodos}
-				onDragStart={handleDragStart}
-				onDrop={handleDrop}
-				onDragOver={e => e.preventDefault()}
-			/>
+			<Tasks todos={filteredTodos} />
 			<Footer filter={handleFilter} todosLength={itemLeft} />
 		</div>
 	);

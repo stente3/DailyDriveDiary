@@ -5,7 +5,7 @@ import { useDispatch } from 'react-redux';
 import { removeTodo, toggleCompleted } from '../../reducers/todoReducer';
 import iconCheck from '../../assets/images/icon-check.svg';
 
-const Item = ({ todo, onDragStart, onDrop, onDragOver }) => {
+const Item = ({ todo }) => {
 	const dispatch = useDispatch();
 	const [completed, setCompleted] = useState(false);
 
@@ -25,13 +25,7 @@ const Item = ({ todo, onDragStart, onDrop, onDragOver }) => {
 	};
 
 	return (
-		<div
-			className={styles.task}
-			draggable='true'
-			onDragStart={e => onDragStart(e, id)}
-			onDrop={onDrop}
-			onDragOver={onDragOver}
-		>
+		<div className={styles.task}>
 			<button
 				type='button'
 				onClick={handleCompletedTodo}
