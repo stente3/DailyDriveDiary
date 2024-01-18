@@ -1,22 +1,24 @@
-import styles from './board.module.css';
+import { useState } from 'react';
+import { useSelector } from 'react-redux';
+
 import { Tasks } from '../Tasks';
 import { Footer } from '../Footer';
 import { Header } from '../Header';
-import { useSelector } from 'react-redux';
-import { useState, useEffect } from 'react';
+
+import styles from './board.module.css';
 
 export const Board = () => {
 	const todos = useSelector(state => state.todos.list);
 	const [filter, setFilter] = useState('all');
-	const [itemLeft, setItemLeft] = useState(todos.length);
 
 	function filterList() {
-		if (filter === 'all') {
-			return todos;
-		} else if (filter === 'active') {
-			return todos.filter(e => !e.completed);
-		} else if (filter === 'completed') {
-			return todos.filter(e => e.completed);
+		switch (filter) {
+			case 'active':
+				return todos.filter(e => !e.completed);
+			case 'completed':
+				return todos.filter(e => e.completed);
+			default:
+				return todos;
 		}
 	}
 
@@ -26,15 +28,18 @@ export const Board = () => {
 
 	const filteredTodos = filterList();
 
-	useEffect(() => {
-		setItemLeft(filteredTodos.length);
-	}, [filteredTodos]);
-
 	return (
 		<div className={styles.board}>
 			<Header />
 			<Tasks todos={filteredTodos} />
-			<Footer filter={handleFilter} todosLength={itemLeft} />
+			<Footer
+				filter={handleFilter}
+				todosLength={
+					todos.filter(item => {
+						return item.completed === false;
+					}).length
+				}
+			/>
 		</div>
 	);
 };
