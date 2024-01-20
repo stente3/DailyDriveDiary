@@ -1,11 +1,7 @@
 [
 	{
-		"name": "Cami",
-		"password": "example"
-	},
-	{
-		"name": "Andrea",
-		"password": "123"
+		"name": "root",
+		"password": "root"
 	},
 	{
 		"name": "Barnett",
